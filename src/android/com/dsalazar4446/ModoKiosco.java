@@ -26,7 +26,7 @@ public class ModoKiosco extends CordovaPlugin {
   }
 
   public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
-    if(action.equals("Mensaje")) {
+    if(action.equals("mensaje")) {
       // An example of returning data back to the web layer
        String phrase = args.getString(0);
       // Echo back the first argument      
