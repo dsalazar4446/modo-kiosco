@@ -1,0 +1,11 @@
+{
+  "name": "modo-kiosco",
+  "version": "1.0.0",
+  "cordova": {
+    "id": "modo-kiosco",
+    "platforms": [
+      "android"
+    ]
+  },
+  "description": "Modo kiosco para aplicaciones android"
+}

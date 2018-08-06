@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="modo-kiosco"
+    version="1.0.0">
+    <name>Modo kiosko</name>
+    <description></description>
+    <license>apache 2.0</license>
+    <keywords></keywords>
+    <repo>https://github.com/thecouk/dsalazar4446/modo-kiosco.git</repo>
+    
+
+    <!-- android -->
+    <platform name="android">
+      <js-module src="www/modo-kiosco.js" name="modo-kiosco">
+        <runs/>
+
+        <!-- Este es el nombre por el cual se accedera el plugin -->
+        <clobbers target="ModoKiosco" />
+      </js-module>
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="ModoKiosco">
+          <param name="android-package" value="com.dsalazar4446.ModoKiosco" />
+          <param name="onload" value="true" />
+        </feature>
+      </config-file>
+
+      <source-file src="src/android/com/dsalazar4446/ModoKiosco.java" target-dir="src/com/dsalazar4446/" />
+    </platform>
+
+    <!-- ios 
+     <platform name="ios">
+        <js-module src="www/plugin.js" name="plugin">
+            <runs/>
+            <clobbers target="ModoKiosco" />
+        </js-module>
+        <config-file target="config.xml" parent="/*">
+            <feature name="ModoKiosco">
+                <param name="ios-package" value="ModoKiosco" onload="true" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/ModoKiosco.h" />
+        <source-file src="src/ios/ModoKiosco.m" />
+    </platform> -->
+</plugin>
