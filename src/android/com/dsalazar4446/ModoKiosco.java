@@ -36,4 +36,28 @@ public class ModoKiosco extends CordovaPlugin {
     return true;
   }
 
+  @Override
+  public void onBackPressed() {
+    // nothing to do here
+    // … really      
+  }
+  @Override
+  public void onWindowFocusChanged(boolean hasFocus) {
+    super.onWindowFocusChanged(hasFocus);
+    if(!hasFocus) {
+      // Close every kind of system dialog
+      Intent closeDialog = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
+      sendBroadcast(closeDialog);
+    }
+  }
+  private final List blockedKeys = new ArrayList(Arrays.asList(KeyEvent.KEYCODE_VOLUME_DOWN, KeyEvent.KEYCODE_VOLUME_UP));
+
+  @Override
+  public boolean dispatchKeyEvent(KeyEvent event) {
+    if (blockedKeys.contains(event.getKeyCode())) {
+      return true;
+    } else {
+      return super.dispatchKeyEvent(event);
+    }
+  }
 }

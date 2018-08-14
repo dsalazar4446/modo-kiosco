@@ -24,8 +24,25 @@
           <param name="onload" value="true" />
         </feature>
       </config-file>
+      <config-file target="AndroidManifest.xml" parent="/manifest/application">
+        <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> 
+        <uses-permission android:name="android.permission.WAKE_LOCK" />
+        <uses-permission android:name="android.permission.GET_TASKS"/>
+        <receiver android:name=".BootReceiver">
+            <intent-filter >
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name=".KioskService" android:exported="false"/>
+        <application android:name=".AppContext" android:icon="@drawable/ic_launcher" android:label="@string/app_name">
+      </config-file>
 
       <source-file src="src/android/com/dsalazar4446/ModoKiosco.java" target-dir="src/com/dsalazar4446/" />
+      <source-file src="src/android/com/dsalazar4446/BootReceiver.java" target-dir="src/com/dsalazar4446/" />
+      <source-file src="src/android/com/dsalazar4446/AppContext.java" target-dir="src/com/dsalazar4446/" />
+      <source-file src="src/android/com/dsalazar4446/OnScreenOffReceiver.java" target-dir="src/com/dsalazar4446/" />
+      <source-file src="src/android/com/dsalazar4446/KioskService.java" target-dir="src/com/dsalazar4446/" />
+      
     </platform>
 
     <!-- ios 
