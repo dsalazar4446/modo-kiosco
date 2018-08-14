@@ -34,7 +34,6 @@
             </intent-filter>
         </receiver>
         <service android:name=".KioskService" android:exported="false"/>
-        <application android:name=".AppContext" android:icon="@drawable/ic_launcher" android:label="@string/app_name">
       </config-file>
 
       <source-file src="src/android/com/dsalazar4446/ModoKiosco.java" target-dir="src/com/dsalazar4446/" />
